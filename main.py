@@ -25,6 +25,13 @@ def main():
     try:
         app = MainWindow(session)
         app.mainloop()
+    except KeyboardInterrupt:
+        # Python 3.14 + tkinter en Windows lanza un KeyboardInterrupt falso
+        # durante la primera inicialización. Se ignora y se reinicia el loop.
+        try:
+            app.mainloop()
+        except Exception:
+            pass
     finally:
         session.close()
 
