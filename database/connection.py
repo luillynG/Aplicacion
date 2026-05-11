@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, Session
 from sqlalchemy.exc import OperationalError
-from .models import Base
+from database.models import Base
 import config
 
 # ── Engine ────────────────────────────────────────────────────────────────────
