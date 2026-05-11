@@ -1,6 +1,6 @@
 from sqlalchemy import (
     Column, Integer, String, Date, DECIMAL,
-    ForeignKey, TINYINT, UniqueConstraint
+    ForeignKey, UniqueConstraint
 )
 from sqlalchemy.orm import relationship, DeclarativeBase
 
@@ -107,7 +107,7 @@ class AñoSeccion(Base):
     __tablename__ = "Año_Seccion"
 
     id_seccion      = Column(Integer,     primary_key=True, autoincrement=True)
-    año             = Column(TINYINT,     nullable=False)   # 1 al 5 (grado)
+    año             = Column(Integer,     nullable=False)   # 1 al 5 (grado)
     seccion         = Column(String(10),  nullable=False)   # Ej: 'A', 'B'
     periodo_escolar = Column(String(20),  nullable=False)   # Ej: '2025-2026'
 
